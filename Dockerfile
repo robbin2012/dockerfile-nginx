@@ -21,7 +21,7 @@ RUN yum update -y
 RUN yum install -y nginx
 
 # Let Docker handle the daemon
-RUN echo "\ndaemon off;" >> /etc/nginx/nginx.conf
+# RUN echo "\ndaemon off;" >> /etc/nginx/nginx.conf
 
 # Attach volumes.
 # VOLUME /etc/nginx/sites-enabled
@@ -35,4 +35,5 @@ EXPOSE 80
 EXPOSE 443
 
 # Define default command.
-ENTRYPOINT ["nginx"]
+# ENTRYPOINT ["nginx"]
+CMD ["nginx", "-g", "daemon off;"]
