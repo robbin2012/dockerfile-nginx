@@ -7,7 +7,8 @@
 #
 
 # Pull base image.
-FROM centos
+# FROM centos
+FROM registry.aliyuncs.com/acs-sample/centos:7
 
 # Should something be wrong
 MAINTAINER Nicholas Anderson, nander13@gmu.edu
@@ -23,7 +24,7 @@ RUN yum install -y nginx
 RUN echo "\ndaemon off;" >> /etc/nginx/nginx.conf
 
 # Attach volumes.
-VOLUME /etc/nginx/sites-enabled
+# VOLUME /etc/nginx/sites-enabled
 VOLUME /var/log/nginx
 
 # Set working directory.
