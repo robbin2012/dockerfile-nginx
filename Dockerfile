@@ -26,6 +26,8 @@ RUN yum install -y nginx
 # Attach volumes.
 # VOLUME /etc/nginx/sites-enabled
 VOLUME /var/log/nginx
+#Document Root
+VOLUME /usr/share/nginx/html
 
 # Set working directory.
 WORKDIR /etc/nginx
