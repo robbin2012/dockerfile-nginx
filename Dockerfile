@@ -25,7 +25,7 @@ COPY nginx-default.conf /etc/nginx/conf.d/default.conf
 
 # Install nodejs 4.x
 RUN curl --silent --location https://rpm.nodesource.com/setup_4.x | bash -
-RUN yum isntall nodejs -y 
+RUN yum install nodejs -y 
 
 # Add taobao mirrors for NPM
 RUN npm install -g cnpm --registry=https://registry.npm.taobao.org
