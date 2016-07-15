@@ -23,6 +23,12 @@ RUN yum install -y nginx
 # Add default.conf for nginx
 COPY nginx-default.conf /etc/nginx/conf.d/default.conf
 
+# Install nodejs 4.x
+RUN curl --silent --location https://rpm.nodesource.com/setup_4.x | bash -
+RUN yum isntall nodejs -y 
+
+# Add taobao mirrors for NPM
+RUN npm install -g cnpm --registry=https://registry.npm.taobao.org
 # Let Docker handle the daemon
 # RUN echo "\ndaemon off;" >> /etc/nginx/nginx.conf
 
