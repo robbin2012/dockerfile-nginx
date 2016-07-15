@@ -22,7 +22,7 @@ RUN yum install -y nginx
 
 # Add default.conf for nginx
 COPY nginx-default.conf /etc/nginx/conf.d/default.conf
-COPY ningx-gzip.conf /etc/nginx/conf.d/gzip.conf
+COPY nginx-gzip.conf /etc/nginx/conf.d/gzip.conf
 
 # Let Docker handle the daemon
 # RUN echo "\ndaemon off;" >> /etc/nginx/nginx.conf
