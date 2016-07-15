@@ -20,14 +20,17 @@ ADD nginx.repo /etc/yum.repos.d/nginx.repo
 RUN yum update -y
 RUN yum install -y nginx
 
+# Add default.conf for nginx
+COPY nginx-default.conf /etc/nginx/conf.d/default.conf
+
 # Let Docker handle the daemon
 # RUN echo "\ndaemon off;" >> /etc/nginx/nginx.conf
 
 # Attach volumes.
 # VOLUME /etc/nginx/sites-enabled
 VOLUME /var/log/nginx
-#Document Root
-VOLUME /usr/share/nginx/html
+# WWW directory 
+VOLUME /var/wwww/
 
 # Set working directory.
 WORKDIR /etc/nginx
