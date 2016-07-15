@@ -20,6 +20,10 @@ ADD nginx.repo /etc/yum.repos.d/nginx.repo
 RUN yum update -y
 RUN yum install -y nginx
 
+# Install nodejs 4.x
+RUN curl --silent --location https://rpm.nodesource.com/setup_4.x | bash -
+RUN yum isntall nodejs -y 
+
 # Let Docker handle the daemon
 # RUN echo "\ndaemon off;" >> /etc/nginx/nginx.conf
 
